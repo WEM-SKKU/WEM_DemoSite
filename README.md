@@ -1,193 +1,50 @@
-# WEM — GitHub Pages + Decap CMS Starter
+# 🎬 WEM (World of Experimental Media) Official Website 
 
-## 포함된 것
+> **성균관대학교 글로벌융합학부 인터렉티브 시네마 & 기능성 게임 제작 학회 'WEM'** 의 공식 웹사이트 저장소입니다.  
+> 🌐 **Live Site:** [https://wem-skku.github.io/WEM_DemoSite/](https://wem-skku.github.io/WEM_DemoSite/)
 
-- Jekyll 기반 다중 페이지 구조
-- `Archive / Prototype` 분기형 메인 히어로
-- `Works`, `Records`, `Recruit`, `Team`, `Contact` 페이지
-- Decap CMS `/admin`
-- GitHub Pages Actions 배포 워크플로
-- 샘플 콘텐츠와 SVG 플레이스홀더 이미지
+<br>
 
----
+## 🚀 About WEM
+**WEM(World of Experimental Media)** 은 [여기에 학회 설립 연도나 짧은 소개 - 예: 202X년에 설립된] 성균관대학교 글로벌융합학부 소속 학회입니다. 
+우리는 단순한 영상이나 게임을 넘어, 관객이 직접 참여하고 소통할 수 있는 **'인터렉티브 시네마(Interactive Cinema)'** 와 사회적 가치를 담은 **'기능성 게임(Functional Game)'** 을 연구하고 제작합니다.
 
-## 1. 가장 먼저 바꿔야 하는 값
+- 🎯 **Vision:** [학회의 목표나 비전 한 줄 작성 - 예: 기술과 예술의 결합으로 새로운 미디어 경험을 창조합니다.]
+- 💡 **Activities:** [주요 활동 1~2개 작성 - 예: 매 학기 2개의 프로젝트 기획 및 개발, 연말 오프라인 전시회 개최 등]
+- 🤝 **Contact:** [학회 공식 이메일 주소 또는 인스타그램 링크 등]
 
-### `admin/config.yml`
-아래 값을 반드시 실제 값으로 바꾸세요.
+<br>
 
-- `repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME`
-- `site_url: https://YOUR_DOMAIN_OR_USERNAME.github.io`
-- `display_url: https://YOUR_DOMAIN_OR_USERNAME.github.io`
+## 💻 About This Website (Project Overview)
+이 웹사이트는 WEM 학회의 정체성을 시각적으로 표현하고, 그동안 쌓아온 방대한 아카이브(Archive)와 현재 진행 중인 프로토타입(Prototype)들을 세련되게 전시하기 위해 자체 제작되었습니다. 
 
-### `_data/site.yml`
-아래 값들을 실제 정보로 바꾸세요.
+특히, 학회원 누구나 코딩 지식 없이도 프로젝트와 활동 기록을 올릴 수 있도록 **백엔드 리스(Backend-less) CMS 구조**로 설계되었습니다.
 
-- `default_email`
-- `institution`
-- `social_links`
+### ✨ Key Features (주요 기능 및 특징)
+1. **Interactive 3D Design:** WEM의 로고와 정체성을 모티브로 한 3D WebGL 컴포넌트 탑재 및 스크롤 반응형(Scroll-triggered) 애니메이션 적용
+2. **Minimalist & Premium UI:** 시각적 몰입감을 극대화하기 위해 군더더기를 덜어낸 모던 타이포그래피 및 그리드 기반(Grid-based) 레이아웃 적용 (Black / White 테마 호환)
+3. **Decap CMS Integration:** 깃허브(GitHub)와 직접 연동되는 오픈소스 CMS를 구축하여, 워드프레스나 네이버 블로그처럼 손쉽게 콘텐츠 발행 및 관리 가능
+4. **Zero-Maintenance Hosting:** 별도의 복잡한 데이터베이스(DB)나 서버 유지비 없이, GitHub Pages와 Jekyll의 정적 사이트 생성(SSG) 기능을 활용한 빠르고 무료인 호스팅 환경 구축
 
-### `contact.md`
-- `email`
-- `secondary_email`
-- `external_links`
+<br>
 
----
+## 🛠️ Tech Stack (사용 기술)
+- **Framework:** [Jekyll](https://jekyllrb.com/) (Ruby 기반 정적 사이트 생성기)
+- **Languages:** HTML5, CSS3 (Vanilla), JavaScript (ES6+)
+- **Content Management:** [Decap CMS](https://decapcms.org/) (구 Netlify CMS)
+- **Deployment & Hosting:** GitHub Actions & GitHub Pages
+- **Auth Proxy:** [decap-cms-oauth](https://github.com/vencat/decap-cms-oauth) (Vercel)
 
-## 2. GitHub Pages 배포
+<br>
 
-GitHub 공식 문서 기준으로, Pages는 **GitHub Actions 기반 배포**를 사용할 수 있습니다.  
-이 저장소에는 `.github/workflows/pages.yml`이 이미 들어 있습니다.
+## 👨‍💻 Contributors
+이 웹사이트의 기획, 디자인, 개발에 참여한 학회원들입니다.
 
-### 배포 순서
+- **[이름 1 작성]** - 기획 및 전체 PM (Project Manager)
+- **[이름 2 작성]** - UI/UX 디자인 및 3D 그래픽 에셋 제작
+- **[이름 3 작성]** - 프론트엔드 개발 및 CMS 아키텍처 구축
 
-1. 새 GitHub 저장소 생성
-2. 이 폴더 전체 업로드
-3. GitHub 저장소 **Settings → Pages**
-4. **Build and deployment → Source → GitHub Actions** 선택
-5. `main` 브랜치에 푸시
-6. Actions 완료 후 Pages URL 확인
-
-> 참고: 프로젝트 페이지(`https://username.github.io/repo-name`)로 먼저 운영한다면 `_config.yml`의 `baseurl`을 `"/repo-name"`으로 설정하세요. 커스텀 도메인을 붙이면 다시 `""`로 두면 됩니다.
+<br>
 
 ---
-
-## 3. Decap CMS 로그인 방식
-
-이 스타터는 **Decap CMS GitHub backend**를 사용합니다.
-
-Decap 공식 문서에 따르면 GitHub backend는 GitHub 계정 로그인을 지원하지만, **GitHub가 인증에 서버를 요구하므로 Netlify가 기본 GitHub 인증을 도와줄 수 있습니다.**  
-또한 이 방식에서는 CMS 사용자가 저장소에 **push 권한**을 가져야 합니다.
-
-### 추천 설정 방식
-- 실제 사이트 호스팅: **GitHub Pages**
-- CMS 인증 지원: **Netlify OAuth Provider 설정**
-
-### 최소 운영 권장
-- `Maintainer` 1~2명만 repo admin/write
-- 실제 CMS 편집자도 저장소 write 권한 부여
-
-### 공식 참고 문서
-- Decap GitHub backend: https://decapcms.org/docs/github-backend/
-- Decap editorial workflow: https://decapcms.org/docs/editorial-workflows/
-- GitHub Pages custom workflow: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
-
----
-
-## 4. 로컬에서 확인하기
-
-GitHub 공식 Jekyll 가이드에서는 Bundler 사용을 권장합니다.
-
-### Ruby / Bundler 준비 후
-```bash
-bundle install
-bundle exec jekyll serve
-```
-
-그다음 브라우저에서:
-- 사이트: `http://127.0.0.1:4000`
-- CMS: `http://127.0.0.1:4000/admin`
-
-### Decap local backend 테스트
-이 저장소는 `admin/config.yml`에 `local_backend: true`가 들어 있습니다.
-
-별도 터미널에서:
-```bash
-npx decap-server
-```
-
----
-
-## 5. 콘텐츠는 어디서 수정하나
-
-### `/admin`에서 수정 가능
-- 홈 소개 문구
-- About
-- Recruit
-- Contact
-- 전역 사이트 설정
-- 팀 정보
-- Archive Works
-- Prototype Works
-- Records
-
-### 코드 고정
-- 전체 레이아웃
-- 컬러 시스템
-- 버튼 스타일
-- 반응형 구조
-- 필터 인터랙션
-
----
-
-## 6. 콘텐츠 구조 설명
-
-### `_works/`
-작업물 상세 페이지입니다.
-
-- `track: archive`
-- `track: prototype`
-
-둘 다 같은 폴더를 쓰되, CMS에서는 필터로 분리해서 보이게 설정했습니다.
-
-### `_records/`
-전시 / 공모전 / 워크숍 / 업데이트 로그 같은 활동 기록입니다.
-
-### `_data/site.yml`
-사이트 전역 문구와 메일, 히어로 단어, 소셜 링크를 담습니다.
-
-### `_data/team.yml`
-운영진 / 멤버 리스트를 담습니다.
-
----
-
-## 7. 추천 운영 순서
-
-1. 기본 정보 수정
-2. 팀 정보 수정
-3. 기존 완료작을 `Archive Works`에 입력
-4. 현재 실험 중인 작업을 `Prototype Works`에 입력
-5. 전시 / 공모전 / 워크숍 기록을 `Records`에 추가
-6. 도메인 연결
-7. 후배 인수인계용 README 보강
-
----
-
-## 8. 커스텀 도메인 연결
-
-GitHub Pages는 커스텀 도메인을 지원합니다.
-
-도메인을 연결할 때는:
-1. 도메인 구매
-2. 저장소 **Settings → Pages → Custom domain** 입력
-3. DNS 레코드 설정
-4. 필요하면 루트에 `CNAME` 파일 추가
-
-> GitHub 문서 기준으로, 저장소에 `CNAME` 파일을 넣는 것만으로는 커스텀 도메인이 자동 설정되지 않습니다. 저장소 설정에서도 도메인을 지정해야 합니다.
-
----
-
-## 9. 파일 요약
-
-- `index.md` — 홈 텍스트
-- `about.md` — 학회 소개
-- `recruit.md` — 모집 정보
-- `contact.md` — 문의 페이지
-- `works.html` — 포트폴리오 목록
-- `records.html` — 활동 기록 목록
-- `team.html` — 멤버 페이지
-- `_works/` — 작업 상세
-- `_records/` — 기록 상세
-- `admin/config.yml` — CMS 핵심 설정
-- `.github/workflows/pages.yml` — Pages 배포 워크플로
-
----
-
-## 10. 다음에 손대기 좋은 확장 포인트
-
-- 다국어(한/영) 페이지 추가
-- Vimeo / YouTube 임베드 섹션 강화
-- 프로젝트별 PDF 자료 자동 노출
-- 썸네일 전용 이미지 규격 고정
-- Works 상세 페이지의 관련 Records 자동 연결
-
+*© [현재 연도 작성 - 예: 2024] WEM. All rights reserved.*
