@@ -1,0 +1,19 @@
+{% assign seo_title = page.title %}
+{% if page.title == "WEM" or page.url == "/" %}
+  {% assign seo_title = site.data.site.seo_title %}
+{% else %}
+  {% assign seo_title = page.title | append: " | " | append: site.data.site.site_name %}
+{% endif %}
+{% assign seo_description = page.description | default: page.lead | default: site.data.site.seo_description %}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ seo_title }}</title>
+<meta name="description" content="{{ seo_description | strip_html | escape }}">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_description | strip_html | escape }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">

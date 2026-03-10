@@ -1,0 +1,24 @@
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div>
+      <p class="eyebrow">CONTACT</p>
+      <a class="footer-mail" href="mailto:{{ site.data.site.default_email }}">{{ site.data.site.default_email }}</a>
+    </div>
+
+    <div>
+      <p class="eyebrow">INSTITUTION</p>
+      <p>{{ site.data.site.institution }}</p>
+    </div>
+
+    <div>
+      <p class="eyebrow">LINKS</p>
+      <div class="footer-links">
+        {% for item in site.data.site.social_links %}
+          {% if item.url and item.url != "" %}
+            <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</footer>

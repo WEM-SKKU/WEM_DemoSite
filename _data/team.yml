@@ -1,0 +1,21 @@
+members:
+  - name: "김예시"
+    role: "Lead / Direction"
+    bio: "인터렉티브 시네마 프로젝트 총괄과 외부 발표 기획을 담당합니다."
+    photo: "/assets/uploads/images/team-lead.svg"
+    portfolio_url: ""
+    order: 1
+
+  - name: "박예시"
+    role: "Game / System"
+    bio: "기능성 게임 시스템 설계와 프로토타입 구현을 담당합니다."
+    photo: "/assets/uploads/images/team-system.svg"
+    portfolio_url: ""
+    order: 2
+
+  - name: "최예시"
+    role: "Visual / Interaction"
+    bio: "전시 비주얼과 인터페이스 디자인, 기록물 아카이빙을 담당합니다."
+    photo: "/assets/uploads/images/team-visual.svg"
+    portfolio_url: ""
+    order: 3

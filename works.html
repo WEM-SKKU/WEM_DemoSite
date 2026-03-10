@@ -1,0 +1,40 @@
+---
+layout: default
+title: "WORKS"
+description: "Archive와 Prototype을 한곳에서 탐색하는 WEM 포트폴리오 페이지"
+---
+
+<section class="page-shell">
+  <header class="page-header">
+    <p class="eyebrow">WORK INDEX</p>
+    <h1>WORKS</h1>
+    <p class="lead">
+      완료된 결과물은 <strong>Archive</strong>에, 실험 중이거나 앞으로 확장할 시도는 <strong>Prototype</strong>에 정리했습니다.
+    </p>
+  </header>
+
+  <div class="filter-toolbar">
+    <div class="filter-group" data-filter-group="track">
+      <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">ALL</button>
+      <button class="filter-btn" type="button" data-filter="archive" aria-pressed="false">ARCHIVE</button>
+      <button class="filter-btn" type="button" data-filter="prototype" aria-pressed="false">PROTOTYPE</button>
+    </div>
+
+    <div class="filter-group" data-filter-group="type">
+      <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">ALL TYPES</button>
+      <button class="filter-btn" type="button" data-filter="interactive_cinema" aria-pressed="false">INTERACTIVE CINEMA</button>
+      <button class="filter-btn" type="button" data-filter="functional_game" aria-pressed="false">FUNCTIONAL GAME</button>
+      <button class="filter-btn" type="button" data-filter="exhibition" aria-pressed="false">EXHIBITION</button>
+      <button class="filter-btn" type="button" data-filter="other" aria-pressed="false">OTHER</button>
+    </div>
+  </div>
+
+  <div class="cards-grid works-grid" data-filter-scope="works">
+    {% assign sorted_works = site.works | sort: "year" | reverse %}
+    {% for item in sorted_works %}
+      {% include work-card.html item=item %}
+    {% endfor %}
+  </div>
+
+  <p class="empty-state" data-empty-state="works" hidden>선택한 조건에 맞는 작업물이 아직 없습니다.</p>
+</section>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'ko' }}">
+  <head>
+    {% include head.html %}
+  </head>
+  <body data-page="{{ page.layout }}" data-url="{{ page.url }}">
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    {% include system-topbar.html %}
+    {% include nav.html %}
+    <main id="main" class="site-main">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+    {% include system-bottombar.html %}
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  </body>
+</html>

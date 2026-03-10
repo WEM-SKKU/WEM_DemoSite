@@ -1,0 +1,15 @@
+<article class="team-card">
+  <div class="team-card__media">
+    {% if include.member.photo %}
+      <img src="{{ include.member.photo | relative_url }}" alt="{{ include.member.name }}">
+    {% endif %}
+  </div>
+  <div class="team-card__body">
+    <p class="eyebrow">{{ include.member.role }}</p>
+    <h3>{{ include.member.name }}</h3>
+    <p>{{ include.member.bio }}</p>
+    {% if include.member.portfolio_url and include.member.portfolio_url != "" %}
+      <a class="button button--ghost" href="{{ include.member.portfolio_url }}" target="_blank" rel="noopener noreferrer">PORTFOLIO</a>
+    {% endif %}
+  </div>
+</article>

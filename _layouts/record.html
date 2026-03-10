@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<section class="page-shell page-shell--detail">
+  <article class="detail-hero detail-hero--record">
+    <div class="detail-hero__media">
+      {% if page.thumbnail %}
+        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }} 대표 이미지">
+      {% else %}
+        <div class="detail-fallback">
+          <span>{{ page.title }}</span>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="detail-hero__body">
+      <p class="eyebrow">{{ page.category | replace: "_", " " | upcase }}</p>
+      <h1>{{ page.title }}</h1>
+      <p class="lead">{{ page.summary }}</p>
+      <div class="meta-badges">
+        {% if page.date %}<span>{{ page.date | date: "%Y.%m.%d" }}</span>{% endif %}
+        {% if page.location %}<span>{{ page.location }}</span>{% endif %}
+      </div>
+    </div>
+  </article>
+
+  <section class="content-section">
+    <div class="rich-copy">
+      {{ content }}
+    </div>
+  </section>
+
+  {% if page.external_url %}
+    <section class="content-section">
+      <h2>External Link</h2>
+      <div class="link-grid">
+        <a class="link-tile" href="{{ page.external_url }}" target="_blank" rel="noopener noreferrer">OPEN LINK</a>
+      </div>
+    </section>
+  {% endif %}
+
+  <section class="content-section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">WORKS</p>
+        <h2>Back to Portfolio</h2>
+      </div>
+      <a class="button button--ghost" href="{{ '/works/' | relative_url }}">VIEW WORKS</a>
+    </div>
+  </section>
+</section>

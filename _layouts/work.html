@@ -1,0 +1,135 @@
+---
+layout: default
+---
+
+<section class="page-shell page-shell--detail">
+  <article class="detail-hero detail-hero--{{ page.track }}">
+    <div class="detail-hero__media">
+      {% if page.hero_image %}
+        <img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }} 대표 이미지">
+      {% else %}
+        <div class="detail-fallback">
+          <span>{{ page.title }}</span>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="detail-hero__body">
+      <p class="eyebrow">{{ page.track | upcase }}</p>
+      <h1>{{ page.title }}</h1>
+      <p class="lead">{{ page.summary }}</p>
+
+      <div class="meta-badges">
+        <span>{{ page.type | replace: "_", " " | upcase }}</span>
+        {% if page.year %}<span>{{ page.year }}</span>{% endif %}
+        {% if page.status %}<span>{{ page.status | replace: "_", " " | upcase }}</span>{% endif %}
+      </div>
+
+      {% if page.tagline %}
+        <p class="subcopy">{{ page.tagline }}</p>
+      {% endif %}
+    </div>
+  </article>
+
+  <section class="content-section">
+    <div class="rich-copy">
+      {{ content }}
+    </div>
+  </section>
+
+  {% if page.track == "archive" and page.result_note %}
+    <section class="content-section">
+      <h2>Result</h2>
+      <p>{{ page.result_note }}</p>
+    </section>
+  {% endif %}
+
+  {% if page.track == "prototype" %}
+    <section class="content-section">
+      <div class="cards-grid cards-grid--tight">
+        {% if page.research_focus %}
+          <article class="info-card">
+            <p class="eyebrow">RESEARCH FOCUS</p>
+            <p>{{ page.research_focus }}</p>
+          </article>
+        {% endif %}
+        {% if page.current_stage_note %}
+          <article class="info-card">
+            <p class="eyebrow">CURRENT STAGE</p>
+            <p>{{ page.current_stage_note }}</p>
+          </article>
+        {% endif %}
+        {% if page.next_step %}
+          <article class="info-card">
+            <p class="eyebrow">NEXT STEP</p>
+            <p>{{ page.next_step }}</p>
+          </article>
+        {% endif %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if page.gallery %}
+    <section class="content-section">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        {% for item in page.gallery %}
+          <figure class="gallery-item">
+            <img src="{{ item.image | relative_url }}" alt="{{ item.caption | default: page.title }}">
+            {% if item.caption %}
+              <figcaption>{{ item.caption }}</figcaption>
+            {% endif %}
+          </figure>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if page.video_url or page.external_url or page.pdf_file %}
+    <section class="content-section">
+      <h2>Links</h2>
+      <div class="link-grid">
+        {% if page.video_url %}
+          <a class="link-tile" href="{{ page.video_url }}" target="_blank" rel="noopener noreferrer">Video</a>
+        {% endif %}
+        {% if page.external_url %}
+          <a class="link-tile" href="{{ page.external_url }}" target="_blank" rel="noopener noreferrer">External Link</a>
+        {% endif %}
+        {% if page.pdf_file %}
+          <a class="link-tile" href="{{ page.pdf_file | relative_url }}" target="_blank" rel="noopener noreferrer">PDF</a>
+        {% endif %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if page.credits %}
+    <section class="content-section">
+      <h2>Credits</h2>
+      <div class="cards-grid cards-grid--tight">
+        {% for person in page.credits %}
+          <article class="info-card">
+            <p class="eyebrow">{{ person.role }}</p>
+            <h3>{{ person.name }}</h3>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  <section class="content-section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">RECENT RECORDS</p>
+        <h2>Recent Logs</h2>
+      </div>
+      <a class="button button--ghost" href="{{ '/records/' | relative_url }}">VIEW ALL</a>
+    </div>
+
+    <div class="records-stack">
+      {% assign latest_records = site.records | sort: "date" | reverse %}
+      {% for item in latest_records limit:2 %}
+        {% include record-card.html item=item %}
+      {% endfor %}
+    </div>
+  </section>
+</section>
