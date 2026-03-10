@@ -1,0 +1,16 @@
+<div class="system-topbar" aria-hidden="true">
+  <div class="system-topbar__inner">
+    <div class="system-topbar__left">
+      <span class="ui-pill">{{ site.data.site.site_name }}</span>
+      <span>{{ site.data.site.site_tagline }}</span>
+      <span class="system-divider"></span>
+      <span>{{ site.data.site.institution }}</span>
+    </div>
+
+    <div class="system-topbar__right">
+      <span>{{ site.data.site.system_status_label }}</span>
+      <span class="system-dot"></span>
+      <span>{{ page.title | default: site.data.site.site_name }}</span>
+    </div>
+  </div>
+</div>

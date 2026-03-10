@@ -1,0 +1,35 @@
+---
+layout: default
+title: "RECORDS"
+description: "전시, 공모전, 워크숍, 업데이트 기록을 모은 WEM 로그 페이지"
+---
+
+<section class="page-shell">
+  <header class="page-header">
+    <p class="eyebrow">TIME INDEX</p>
+    <h1>RECORDS</h1>
+    <p class="lead">
+      WEM의 제작 흐름과 외부 활동을 시간순으로 축적하는 기록 공간입니다.
+    </p>
+  </header>
+
+  <div class="filter-toolbar">
+    <div class="filter-group" data-filter-group="category">
+      <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">ALL</button>
+      <button class="filter-btn" type="button" data-filter="exhibition" aria-pressed="false">EXHIBITION</button>
+      <button class="filter-btn" type="button" data-filter="competition" aria-pressed="false">COMPETITION</button>
+      <button class="filter-btn" type="button" data-filter="workshop" aria-pressed="false">WORKSHOP</button>
+      <button class="filter-btn" type="button" data-filter="update" aria-pressed="false">UPDATE</button>
+      <button class="filter-btn" type="button" data-filter="news" aria-pressed="false">NEWS</button>
+    </div>
+  </div>
+
+  <div class="records-stack" data-filter-scope="records">
+    {% assign sorted_records = site.records | sort: "date" | reverse %}
+    {% for item in sorted_records %}
+      {% include record-card.html item=item %}
+    {% endfor %}
+  </div>
+
+  <p class="empty-state" data-empty-state="records" hidden>선택한 카테고리에 맞는 기록이 아직 없습니다.</p>
+</section>
