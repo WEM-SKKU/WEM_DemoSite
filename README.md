@@ -17,7 +17,7 @@
   매 기수 기능성 게임과 인터랙티브 콘텐츠를 기획·개발하고, 국내외 전시·공모전·산학협력을 통해 작품을 확장합니다.
 
 - **🤝 Contact**  
-  Email us !! : [ waveemakers@gmail.com ]
+  Email us : [ waveemakers@gmail.com ]
 
 <br>
 
