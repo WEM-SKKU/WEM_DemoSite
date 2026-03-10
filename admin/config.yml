@@ -2,8 +2,10 @@ backend:
   name: github
   repo: WEM-SKKU/WEM_DemoSite
   branch: main
+  base_url: https://decap-cms-oauth.vercel.app
 
 publish_mode: editorial_workflow
+
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
