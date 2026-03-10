@@ -1,7 +1,5 @@
 # WEM — GitHub Pages + Decap CMS Starter
 
-이 저장소는 **GitHub Pages + Jekyll + Decap CMS** 조합으로 바로 시작할 수 있도록 만든 WEM 학회 사이트 스타터입니다.
-
 ## 포함된 것
 
 - Jekyll 기반 다중 페이지 구조
