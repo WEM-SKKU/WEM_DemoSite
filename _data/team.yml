@@ -1,21 +1,34 @@
 members:
-  - name: "김예시"
-    role: "Lead / Direction"
-    bio: "인터렉티브 시네마 프로젝트 총괄과 외부 발표 기획을 담당합니다."
-    photo: "/assets/uploads/images/team-lead.svg"
+  - name: 김태린
+    role: Lead / Direction
+    bio: 인터렉티브 시네마 프로젝트 총괄과 학회 내부 업무를 담당합니다.
+    photo: /assets/uploads/images/team-lead.svg
     portfolio_url: ""
     order: 1
-
-  - name: "박예시"
-    role: "Game / System"
-    bio: "기능성 게임 시스템 설계와 프로토타입 구현을 담당합니다."
-    photo: "/assets/uploads/images/team-system.svg"
+  - name: 장희원
+    role: Lead / Direction
+    bio: 인터렉티브 시네마 프로젝트 총괄과 학회 외부 소통을 담당합니다.
+    photo: /assets/uploads/images/team-system.svg
     portfolio_url: ""
     order: 2
-
-  - name: "최예시"
-    role: "Visual / Interaction"
-    bio: "전시 비주얼과 인터페이스 디자인, 기록물 아카이빙을 담당합니다."
-    photo: "/assets/uploads/images/team-visual.svg"
+  - name: 윤지형
+    role: "Game development "
+    bio: "게임 구현을 위한 시스템을 연구합니다. "
+    photo: /assets/uploads/images/team-visual.svg
     portfolio_url: ""
     order: 3
+  - name: 김규원
+    role: .
+    bio: .
+    order: 3
+    photo: /assets/uploads/스크린샷-2025-07-11-235712.png
+  - name: 주서진
+    role: .
+    bio: .
+    order: 4
+    photo: /assets/uploads/스크린샷-2025-07-11-235712.png
+  - name: 차해인
+    order: 5
+    role: .
+    bio: .
+    photo: /assets/uploads/스크린샷-2025-07-11-235712.png
